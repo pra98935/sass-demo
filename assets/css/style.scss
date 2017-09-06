@@ -1,0 +1,96 @@
+@import '_extend.scss';
+@import '_mixin.scss';
+
+@import 'theme-red.scss';
+// @import 'theme-yellow.scss';
+
+/*
+Common Css
+*/
+.success {
+  @extend .message;
+  border-color: green;
+  @include border-radius(5px);
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+  @include border-radius(5px);
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+  @include border-radius(5px);
+}
+
+body{
+     @include padding(0,0,0,0);
+     @include margin(0,0,0,0);
+     background-color: $bodyBackground;
+     ul{
+         @include padding(0,0,0,0);
+         @include margin(0,0,0,0);
+         list-style: none;
+         text-align: center;
+         li{
+             display: inline;
+             @include margin(0,10px,0,10px);
+             a{
+                 text-decoration: none;
+                 color: $secondryColor;
+                 @include paraSize(18px);
+                 @include padding(7px,15px,7px,15px);
+             }
+             a:hover{
+                 background-color: $secondryColor;
+                 color: $primaryColor;
+                 @include border-radius(5px);
+             }
+         }
+     }
+
+     img{
+         max-width: 100%;
+         width: 100%;
+     }
+}
+
+/*
+Css for header
+*/
+header{
+    background-color: $primaryColor;
+    @extend .fixedlayout;
+    @include paraSize(16px);
+    @include padding(15px,0,15px,0);
+}
+
+/*
+Css for main
+*/
+main{
+    background-color: $secondryColor;
+    @extend .fixedlayout;
+    section{@include padding(10px,10px,10px,10px);}
+    p{
+        @include paraSize(18px);
+        color: $textcolor;
+    }
+}
+
+
+/*
+Css for footer
+*/
+footer{
+    background-color: $primaryColor;
+    @extend .fixedlayout;
+    @include padding(15px,0,15px,0);
+    text-align: center;
+    p{
+        @include paraSize(20px);
+        color: $secondryColor;
+    }
+}
